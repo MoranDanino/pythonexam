@@ -12,6 +12,12 @@ class Aws_Validation:
     public_ip: str
     load_balancer_dns: str
 
+'''
+Missing functions to run run_terraform.py to automatically create the terraform file 
++ run the terraform file: 
+terraform init and then terraform apply on myterraform.tf file
+I tried to build it but I didn't have time.
+'''
 
 #this works manually, not automatically
 def get_terraform_output(output_name):
