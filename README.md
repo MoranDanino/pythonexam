@@ -31,3 +31,9 @@ run_terraform.py : run the jinja2 template and output valid gerraform file.
 templateJ.j2 : template for the terraform file
 requirements : the packages I need to install for the mission 
 #
+
+
+how to run: 
+first run manually run_terraform.py and get the terraform file
+then the terraform file: myterraform.tf 
+and then the main with the output of the terraform file
