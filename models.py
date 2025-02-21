@@ -13,7 +13,7 @@ class Aws_Validation:
     load_balancer_dns: str
 
 
-#it working manually, not automaticly
+#this works manually, not automatically
 def get_terraform_output(output_name):
     result = subprocess.run(["terraform", "output", "-json"], capture_output=True, text=True)
     try:
