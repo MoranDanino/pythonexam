@@ -17,6 +17,7 @@ Missing functions to run run_terraform.py to automatically create the terraform 
 + run the terraform file: 
 terraform init and then terraform apply on myterraform.tf file
 I tried to build it but I didn't have time.
+should use subprocess commands.
 '''
 
 #this works manually, not automatically
