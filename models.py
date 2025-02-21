@@ -63,4 +63,3 @@ def list_alb(ALB_NAME):
 def exec_file_as_json(data: Aws_Validation, file_name: str):
     with open(file_name, "w") as file:
         json.dump(data.__dict__, file, indent=4)  #convert the dataclass to json and write it to the file
-
