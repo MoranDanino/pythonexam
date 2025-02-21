@@ -1,21 +1,17 @@
-import boto3
+from botocore.exceptions import ClientError
+from models import Aws_Validation, exec_file_as_json, list_instances, list_alb, get_terraform_output
 import subprocess
 import json
-from botocore.exceptions import ClientError
-from models import Aws_Validation, exec_file_as_json, list_instances, list_alb, run_terraform_run_python_script, run_terraform
 
-# # AWS Region
-# REGION = "us-east-1"
+###aws configure for connecting aws account
 
-# # Terraform output values (replace these with actual Terraform outputs)
-# INSTANCE_ID = "i-0ebd8ab2e1a0cc6f5"  # Replace with your instance ID from Terraform
-# ALB_NAME = "my-alb"  # Replace with your ALB name
+#AWS region
+region = "us-east-1"
 
-run_terraform_run_python_script()
-run_terraform()
+instance_id = get_terraform_output("instance_id")
+load_balancer_dns_name = get_terraform_output("ld_dns_name")
 
-
-instance_details = list_instances(INSTANCE_ID)
-alb_details = list_alb(ALB_NAME)
+instance_details = list_instances(instance_id)
+alb_details = list_alb(load_balancer_dns_name)
 final_defails = {**instance_details, **alb_details} #merge the two dictionaries
 exec_file_as_json(Aws_Validation(**final_defails), "aws_validation.json")
